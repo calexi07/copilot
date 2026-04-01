@@ -620,6 +620,10 @@
       }
     }
 
+    function triggerModalNoInput() {
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+
     function triggerModal() {
       const input = document.getElementById('chatInput');
       if (!input.value.trim()) return;
@@ -636,6 +640,18 @@
     document.getElementById('modalOverlay').addEventListener('click', function(e) {
       if (e.target === this) closeModal();
     });
+
+    // Any click on the page triggers modal (except typing in input or clicking modal)
+    document.body.addEventListener('click', function(e) {
+      const overlay = document.getElementById('modalOverlay');
+      if (overlay.classList.contains('active')) return;
+      const input = document.getElementById('chatInput');
+      if (e.target === input) return;
+      if (overlay.contains(e.target)) return;
+      // Only trigger for interactive-looking elements or clicks outside input
+      if (e.target.tagName === 'TEXTAREA') return;
+      triggerModalNoInput();
+    }, true);
   </script>
 </body>
 </html>
