@@ -133,14 +133,15 @@
       width: 28px;
       height: 28px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #0078d4, #00bcf2);
+      background: #006B3C;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
       color: #fff;
       flex-shrink: 0;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     /* ── MAIN ── */
@@ -372,11 +373,51 @@
       margin-bottom: 8px;
     }
 
-    .modal-sub {
+    .modal-intro {
       font-size: 14px;
       color: var(--text-secondary);
+      margin-bottom: 18px;
       line-height: 1.5;
-      margin-bottom: 28px;
+    }
+
+    .modal-checks {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .check-item strong { color: var(--text-primary); }
+
+    .secure-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #1a7a3c;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .modal-footer-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 24px;
     }
 
     .modal-close {
@@ -441,25 +482,7 @@
       <div class="nav-item" style="color: var(--text-muted); font-size:13px;">··· All agents</div>
     </div>
 
-    <div class="sidebar-section-label">Chats</div>
-    <div style="overflow-y:auto; flex:1;">
-      <div class="chat-item">tradu in romana urmatoarele par...</div>
-      <div class="chat-item">e corecta frazarea?Stimată Doa...</div>
-      <div class="chat-item">am un fisier word care trebuie tr...</div>
-      <div class="chat-item">Am 5 pdfuri din care trebuie sa i...</div>
-      <div class="chat-item">I'm using DevTools in Microsoft ...</div>
-      <div class="chat-item">Translate this entire PDF docume...</div>
-      <div class="chat-item">am imaginea asta ca referinta. A...</div>
-      <div class="chat-item">can you recomand me top 5 bra...</div>
-      <div class="chat-item">tradu in romana: Krka's Car-Free...</div>
-      <div class="chat-item">The user has the page "http://kr...</div>
-      <div class="chat-item">tradu in romanaLET'S GET ON T...</div>
-      <div class="chat-item">hello, i have the following contra...</div>
-      <div class="chat-item">i have the following word docu...</div>
-      <div class="chat-item">tradu in romana</div>
-      <div class="chat-item">Hanul lui Manuc - Oferta PLATO...</div>
-      <div class="nav-item" style="color: var(--text-muted); font-size:13px; margin:0;">··· All chats</div>
-    </div>
+    <div style="flex:1;"></div>
 
     <div class="sidebar-footer">
       <div class="nav-item">
@@ -467,8 +490,8 @@
         Apps
       </div>
       <div class="user-row">
-        <div class="avatar">A</div>
-        <span style="font-size:13px; color: var(--text-secondary);">Alexiu, Cristian-Stefan</span>
+        <div class="avatar">K</div>
+        <span style="font-size:13px; color: var(--text-secondary);">KRKA Group</span>
         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:auto; color: var(--text-muted)"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
       </div>
     </div>
@@ -559,8 +582,28 @@
     <div class="modal">
       <span class="modal-emoji">🤡</span>
       <div class="modal-title">Păcăleală de 1 Aprilie!</div>
-      <div class="modal-sub">Asta nu e Copilot adevărat.<br>Ai fost păcălit cu succes! 😄</div>
-      <button class="modal-close" onclick="closeModal()">Ha, am înțeles!</button>
+      <div class="modal-body">
+        <p class="modal-intro">Nu prea ai fost atent... acest Copilot nu este adevărat.</p>
+        <div class="modal-checks">
+          <div class="check-item">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#888" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2 2"/></svg>
+            <span>Te-ai asigurat că ești conectat cu <strong>contul de Microsoft</strong>?</span>
+          </div>
+          <div class="check-item">
+            <div class="secure-badge">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#fff" stroke-width="2.2"><path d="M12 2l7 4v6c0 5-7 10-7 10S5 17 5 12V6z"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2"/></svg>
+              Secured
+            </div>
+            <span>Te-ai asigurat că ai iconița de <strong>secured</strong>?</span>
+          </div>
+          <div class="check-item">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#888" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            <span>Ai verificat <strong>link-ul</strong>? Ți se pare că este link-ul de Copilot?</span>
+          </div>
+        </div>
+        <p class="modal-footer-text">Sunt sigur că data viitoare o să fii mai atent. 😄</p>
+      </div>
+      <button class="modal-close" onclick="closeModal()">Am înțeles!</button>
     </div>
   </div>
 
